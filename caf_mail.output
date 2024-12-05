@@ -1,0 +1,9 @@
+caf/event_based_mail.hpp: In instantiation of ‘auto caf::event_based_mail_t<Priority, Trait, Args>::request(const Handle&, caf::timespan) && [with Handle = caf::event_based_actor*; caf::message_priority Priority = caf::message_priority::normal; Trait = caf::dynamically_typed; Args = {long unsigned int}; caf::timespan = std::chrono::duration<long int, std::ratio<1, 1000000000> >]’:
+caf_examples/main.cpp:15:51:   required from here
+   15 |                 self->mail(std::size_t{2}).request(self, caf::infinite).then([self](std::size_t res)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+caf/event_based_mail.hpp:123:11: error: ‘caf::event_based_actor*’ is not a class, struct, or union type
+  123 |     using response_type = response_type_t<typename Handle::signatures, Args...>;
+      |           ^~~~~~~~~~~~~
+caf/event_based_mail.hpp:143:11: error: ‘caf::event_based_actor*’ is not a class, struct, or union type
+  143 |     using hdl_t = detail::event_based_response_handle_t<response_type>;
